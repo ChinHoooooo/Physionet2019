@@ -56,7 +56,7 @@ def get_sepsis_score(data, model):
     current_record=np.hstack((raw_feature,new_feature))
     scores=model.predict_proba(current_record)
     scores=scores[:,1] 
-    labels=(scores>0.02)
+    labels=(scores>0.015)
     return (scores, labels)
 
 def load_sepsis_model():
